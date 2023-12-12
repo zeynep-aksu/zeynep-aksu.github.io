@@ -1,16 +1,29 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed without iframe</title>
+    <title>External Content Display</title>
 </head>
 <body>
-    <h1>Embedded Website</h1>
-    <object data="https://zeynep-aksu.my.canva.site/" type="text/html" width="600" height="400">
-        <p>Your browser does not support embedded objects.</p>
-    </object>
+
+<div id="external-content-container"></div>
+
+<script>
+    // Specify the URL of the external site
+    var externalUrl = 'https://zeynep-aksu.my.canva.site';
+
+    // Fetch the content using JavaScript Fetch API
+    fetch(externalUrl)
+        .then(response => response.text())
+        .then(content => {
+            // Display the fetched content in a container
+            document.getElementById('external-content-container').innerHTML = content;
+        })
+        .catch(error => console.error('Error fetching external content:', error));
+</script>
+
 </body>
 </html>
-
