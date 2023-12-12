@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame Redirect</title>
+</head>
+<body>
+
+<!-- This is the frame that will display the content of b.com -->
+<iframe id="myFrame" src="https://zeynep-aksu.my.canva.site/" style="width:100%; height:100vh; border:none;"></iframe>
+
+<script>
+  // Use JavaScript to update the frame source after the page loads
+  window.onload = function() {
+    // Get the iframe element
+    var frame = document.getElementById('myFrame');
+
+    // Change the source of the iframe to b.com
+    frame.src = 'https://zeynep-aksu.my.canva.site/';
+
+    // Update the URL bar to show a.com/aaa
+    window.history.replaceState({}, '', 'zeynep-aksu.github.io');
+  };
+</script>
+
+</body>
+</html>
